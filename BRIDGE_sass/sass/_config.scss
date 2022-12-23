@@ -1,0 +1,50 @@
+$color1 : #fc8902;
+$color2 : #ffffff;
+$color3 : #4D4D4D;
+$color4 : #333333;
+$color5 : #192437;
+$color6 : #707070;
+$color7 : #AAAAAA;
+$color8 : #F3B265;
+$color9 : #F9F9F9;
+
+$breakpoint:('pc': 'screen and (min-width: 1201px)',
+  'sp': 'screen and (max-width: 767.9px)',
+  'ipad': 'screen and (min-width: 768px) and (max-width: 1200px)'
+);
+
+@mixin mq($bp: pc) {
+  @media #{map-get($breakpoint , $bp)} { //(map,key)
+    @content;
+  }
+}
+
+@font-face {
+  font-family: "AachenStd";
+  src: url('../font/AachenStd-Bold.otf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('../font/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('../font/Roboto-Regular.ttf');
+}
+
+@mixin font-aa() {
+  font-family: "AachenStd", serif;
+  font-weight: 700;
+}
+
+@mixin font-ro-reg() {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+}
+
+@mixin font-ro-bold() {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+}

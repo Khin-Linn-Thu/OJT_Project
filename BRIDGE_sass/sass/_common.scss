@@ -1,0 +1,640 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $color2;
+  font-size: 16px;
+  @include font-ro-reg();
+
+  @include mq(ipad) {
+    font-size: 1.823vw;
+  }
+
+  @include mq(sp) {
+    font-size: 2.188vw;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+.l-inner {
+  width: 1110px;
+  margin: 0 auto;
+
+  @include mq(ipad) {
+    width: 93.75vw;
+  }
+
+  @include mq(sp) {
+    width: 93.75vw;
+  }
+}
+
+.pc {
+  display: block;
+
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+
+  @include mq(sp) {
+    display: block;
+  }
+}
+
+a {
+  display: inline-block;
+  color: $color2;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+.cmn-mv {
+  padding: 16px 0 89px;
+  background: url('/img/img_cmn_mv_bg.png') no-repeat center/cover;
+
+  @include mq(ipad) {
+    padding: 1.083vw 0 6.789vw;
+  }
+
+  @include mq(sp) {
+    padding: 1.083vw 0 5.789vw;
+    background: url('/img/img_cmn_mv_bg_sp.png') no-repeat center/cover;
+  }
+
+  .mv-ttl {
+    font-size: 38px;
+
+    @include mq(ipad) {
+      font-size: 2.604vw;
+    }
+
+    @include mq(sp) {
+      font-size: 2.656vw;
+    }
+
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(sp) {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    padding: 1.167vw 0;
+
+    .menu,
+    .menu {
+      span {
+        display: inline-block;
+        box-sizing: border-box;
+        transition: all .4s;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 50%;
+      right: 8.025vw;
+      width: 4.419vw;
+      height: 3.219vw;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0.469vw;
+        background-color: $color2;
+        border-radius: 5px;
+
+        &:nth-of-type(1) {
+          top: 0;
+        }
+
+        &:nth-of-type(2) {
+          top: 1.419vw;
+        }
+
+        &:nth-of-type(3) {
+          bottom: 0;
+        }
+      }
+
+      &.active {
+        span {
+          width: 4.975vw;
+          height: 1.25vw;
+          border-radius: 0;
+
+          &:nth-of-type(1) {
+            transform: translateY(1.663vw) rotate(-44deg);
+          }
+
+          &:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          &:nth-of-type(3) {
+            transform: translateY(-0.363vw) rotate(44deg);
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    max-width: 222px;
+
+    @include mq(ipad) {
+      margin-left: 7.203vw;
+      max-width: 15.365vw;
+    }
+
+    @include mq(sp) {
+      margin-left: 7.703vw;
+      max-width: 15.625vw;
+    }
+  }
+
+  .gnav {
+    @include mq(sp) {
+      position: fixed;
+      top: 8.625vw;
+      right: -100vw;
+      z-index: 111;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include mq(sp) {
+        display: block;
+        padding: 3.451vw 0 0;
+        text-align: center;
+      }
+
+      li {
+        margin: 0 24px;
+
+        @include mq(ipad) {
+          margin: 0 1.132vw;
+        }
+
+        @include mq(sp) {
+          margin: 0;
+          padding-bottom: 3.594vw;
+        }
+
+        a {
+          line-height: 1.1;
+          text-transform: uppercase;
+
+          &:hover,
+          &.active {
+            color: $color1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mv-ttl {
+  font-size: 43px;
+  text-align: center;
+  @include font-aa();
+
+  @include mq(ipad) {
+    font-size: 3.255vw;
+  }
+
+  @include mq(sp) {
+    font-size: 2.969vw;
+  }
+}
+
+.bread-crumbs {
+  display: flex;
+  width: 216px;
+  margin: 76px auto 32px;
+  padding: 13px 30px;
+  background-color: rgba(252, 137, 2, 0.4);
+  text-align: center;
+
+  @include mq(ipad) {
+    width: 24.625vw;
+    margin: 4.196vw auto 1.367vw;
+    padding: 1.693vw 4.106vw;
+  }
+
+  @include mq(sp) {
+    width: 30.938vw;
+    margin: 11.563vw auto 0.625vw;
+    padding: 2.031vw 4vw;
+  }
+
+  li {
+    position: relative;
+    margin-right: 15px;
+    text-transform: uppercase;
+
+    @include mq(ipad) {
+      margin-right: 0.053vw;
+    }
+
+    @include mq(sp) {
+      margin-right: 2.344vw;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: 20px;
+
+      @include mq(ipad) {
+        margin-left: 2.604vw;
+      }
+
+      @include mq(sp) {
+        margin-left: 1.25vw;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -21px;
+      content: "-";
+      transform: translateY(-50%);
+
+      @include mq(ipad) {
+        right: -1.534vw;
+      }
+
+      @include mq(sp) {
+        right: -2.188vw;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+.cmn-ttl {
+  color: $color3;
+  font-size: 30px;
+  text-transform: uppercase;
+  @include font-ro-bold();
+
+  @include mq(ipad) {
+    font-size: 2.604vw;
+  }
+
+  @include mq(sp) {
+    font-size: 2.5vw;
+  }
+}
+
+.cmn-txt {
+  line-height: 1.84;
+  color: $color4;
+
+  @include mq(sp) {
+    line-height: 1.45;
+  }
+}
+
+.cmn-btn {
+  padding: 8px 25px;
+  border: 1px solid $color1;
+  background-color: $color2;
+  color: $color1;
+  text-transform: uppercase;
+
+  @include mq(ipad) {
+    padding: 1.042vw 3.255vw;
+    border: 0.13vw solid $color1;
+    font-size: 2.188vw;
+  }
+
+  @include mq(sp) {
+    padding: 1.25vw 3.906vw;
+    border: 0.156vw solid $color1;
+    font-size: 2.188vw;
+  }
+
+  &:hover {
+    background-color: $color1;
+    color: $color2;
+  }
+}
+
+.cmn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec-ft {
+  padding: 93px 0 0;
+  background-color: $color5;
+
+  @include mq(ipad) {
+    padding: 7.009vw 0 0;
+  }
+
+  @include mq(sp) {
+    padding: 5.469vw 0 0;
+  }
+
+  .l-inner {
+    @include mq(ipad) {
+      margin: 0 auto;
+      max-width: 79.297vw;
+    }
+  }
+
+  .cmn-flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 82px;
+    border-bottom: 1px solid $color6;
+
+    @include mq(ipad) {
+      width: 82.297vw;
+      padding-bottom: 5.377vw;
+      border-bottom: 0.13vw solid $color6;
+    }
+
+    @include mq(sp) {
+      position: relative;
+      padding-bottom: 9.877vw;
+      border-bottom: 0.156vw solid $color6;
+    }
+
+    .tab-show {
+      //width: 345px;
+
+      @include mq(ipad) {
+        width: 24.544vw;
+      }
+
+      @include mq(sp) {
+        width: 53.906vw;
+        height: 31.25vw;
+      }
+
+      .ft-ttl {
+        font-size: 25px;
+        letter-spacing: 0.3px;
+        @include font-ro-bold();
+
+        @include mq(ipad) {
+          font-size: 1.693vw;
+          letter-spacing: 0.039vw;
+        }
+
+        @include mq(sp) {
+          margin-right: 0.156vw;
+          padding: 1.25vw 2.3vw;
+          background-color: $color2;
+          color: $color1;
+          font-size: 2.344vw;
+          text-align: center;
+          letter-spacing: 0.047vw;
+
+          &.current {
+            background-color: $color1;
+            color: $color2;
+          }
+        }
+      }
+
+      .contact-blk {
+        padding-top: 24px;
+
+        @include mq(ipad) {
+          width: 27.344vw;
+          padding-top: 1.925vw;
+        }
+
+        @include mq(sp) {
+          position: absolute;
+          right: 0;
+          left: 0;
+          width: 93.75vw;
+          margin: 0 auto;
+          padding: 3.75vw 0;
+          background-color: #5D4226;
+
+          &.current {
+            display: block;
+          }
+        }
+
+        li {
+          position: relative;
+          line-height: 1.7;
+          padding: 8px 0 8px 38px;
+
+          @include mq(ipad) {
+            line-height: 1.5;
+            padding: 0.942vw 0 0.342vw 2.548vw;
+            font-size: 1.302vw;
+          }
+
+          @include mq(sp) {
+            line-height: 1.5;
+            padding: 0.942vw 0 0.842vw 7.848vw;
+            font-size: 2.188vw;
+          }
+
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            content: '';
+            transform: translateY(-50%);
+
+            @include mq(ipad) {
+              left: 0.651vw;
+              height: 1.302vw;
+            }
+
+            @include mq(sp) {
+              left: 4.451vw;
+            }
+          }
+        }
+
+        .address {
+          &::before {
+            width: 20px;
+            height: 20px;
+            background: url('../img/img_ft_address.png') no-repeat center/contain;
+
+            @include mq(ipad) {
+              width: 1.302vw;
+            }
+
+            @include mq(sp) {
+              width: 2.188vw;
+              height: 2.188vw;
+            }
+          }
+        }
+
+        .phone {
+          &::before {
+            top: 37%;
+            width: 16px;
+            height: 18px;
+            background: url('../img/img_ft_phone.png') no-repeat center/contain;
+
+            @include mq(ipad) {
+              width: 1.172vw;
+            }
+
+            @include mq(sp) {
+              width: 1.875vw;
+              height: 2.188vw;
+            }
+          }
+
+          a {
+            @include mq(pc) {
+              pointer-events: none;
+            }
+          }
+        }
+
+        .home {
+          &::before {
+            width: 18px;
+            height: 19px;
+            background: url('../img/img_ft_home.png') no-repeat center/contain;
+
+            @include mq(ipad) {
+              width: 1.302vw;
+            }
+
+            @include mq(sp) {
+              width: 2.188vw;
+              height: 2.188vw;
+            }
+          }
+
+          a {
+            @include mq(pc) {
+              pointer-events: none;
+            }
+          }
+        }
+
+        .link {
+          &::before {
+            width: 16px;
+            height: 18px;
+            background: url('../img/img_ft_mail.png') no-repeat center/contain;
+
+            @include mq(ipad) {
+              width: 1.172vw;
+            }
+
+            @include mq(sp) {
+              width: 1.875vw;
+              height: 2.188vw;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .copy-blk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 0;
+
+    @include mq(ipad) {
+      padding: 1.685vw 0;
+    }
+
+    @include mq(sp) {
+      padding: 1.875vw 3.906vw;
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 1.172vw;
+
+      @include mq(sp) {
+        letter-spacing: 0.109vw;
+      }
+
+      img+img {
+        padding-left: 28px;
+
+        @include mq(ipad) {
+          padding-left: 2.574vw;
+        }
+
+        @include mq(sp) {
+          padding-left: 2.344vw;
+        }
+      }
+
+      span {
+        color: $color1;
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        @include mq(ipad) {
+          height: 1.953vw;
+        }
+
+        @include mq(sp) {
+          height: 2.031vw;
+        }
+      }
+    }
+  }
+}
